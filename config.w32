@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("opentracing_driver", "for opentracing_driver support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("opentracing_driver", "enable opentracing_driver support", "no");
+
+if (PHP_OPENTRACING_DRIVER != "no") {
+	EXTENSION("opentracing_driver", "opentracing_driver.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
